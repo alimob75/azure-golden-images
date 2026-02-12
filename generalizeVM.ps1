@@ -8,7 +8,9 @@ reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\cdrom /v start /t R
 Remove-Item -Path C:\Windows\Panther -Recurse -Force -ErrorAction SilentlyContinue
 
 # Run sysprep with /shutdown (not /oobe as per docs)
-Start-Process -FilePath C:\Windows\System32\Sysprep\Sysprep.exe -ArgumentList '/generalize /shutdown' -Wait
+Start-Process -FilePath C:\Windows\System32\Sysprep\Sysprep.exe -ArgumentList '/generalize'
+
+Start-Sleep 120
 
     
 Write-Host "Sysprep finished. VM will shutdown automatically."
