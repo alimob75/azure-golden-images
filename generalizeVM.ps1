@@ -14,7 +14,7 @@ Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Qualys' -Name 'HostID' -Force -ErrorAc
 Set-DnsClientGlobalSetting -SuffixSearchList @("rs.sdxcorp.net", "ce.sdxcorp.net", "na.sdxcorp.net") -ErrorAction SilentlyContinue
 
 # Run sysprep with /shutdown (not /oobe as per docs)
-Start-Process -FilePath C:\Windows\System32\Sysprep\Sysprep.exe -ArgumentList '/generalize /quit' -Wait
+Start-Process -FilePath C:\Windows\System32\Sysprep\Sysprep.exe -ArgumentList '/generalize /quit'
 
 Start-Sleep 120
 
