@@ -15,8 +15,5 @@ Set-DnsClientGlobalSetting -SuffixSearchList @("rs.sdxcorp.net", "ce.sdxcorp.net
 
 # Run sysprep with /shutdown (not /oobe as per docs)
 Start-Process -FilePath C:\Windows\System32\Sysprep\Sysprep.exe -ArgumentList '/generalize /oobe /quit /quiet' -Wait
-
-Start-Sleep 120
-
     
 Write-Host "Sysprep finished. VM will shutdown automatically."
